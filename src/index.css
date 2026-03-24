@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #09090b; /* Zinc 950 */
+  --color-surface: #18181b; /* Zinc 900 */
+  --color-surface-hover: #27272a; /* Zinc 800 */
+  
+  --color-brand-primary: #3b82f6; /* Blue 500 */
+  --color-brand-secondary: #8b5cf6; /* Violet 500 */
+  --color-brand-accent: #10b981; /* Emerald 500 */
+
+  --font-sans: "Inter", "Outfit", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-zinc-300 font-sans selection:bg-brand-primary/30;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
+  
+  .glass-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1), inset 1px 0 1px rgba(255,255,255,0.05);
+    @apply backdrop-blur-2xl border border-white/5;
+  }
+
+  .premium-glow {
+    @apply shadow-[0_0_30px_-5px_var(--color-brand-primary)];
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-zinc-200 to-zinc-500;
+  }
+  
+  .gradient-heading {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  perspective: 1000px;
+}
